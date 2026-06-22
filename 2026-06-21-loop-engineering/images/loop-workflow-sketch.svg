@@ -1,0 +1,99 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="roughen" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" seed="11" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8"/>
+    </filter>
+    <filter id="paper" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="6" result="grain"/>
+      <feColorMatrix in="grain" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.08"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FBF8F1"/>
+  <rect width="1600" height="900" fill="#000000" filter="url(#paper)"/>
+
+  <ellipse cx="232" cy="260" rx="180" ry="90" fill="#E8DED0" fill-opacity="0.7"/>
+  <ellipse cx="806" cy="170" rx="250" ry="85" fill="#D6E8F5" fill-opacity="0.75"/>
+  <ellipse cx="1230" cy="688" rx="260" ry="100" fill="#DCE8D9" fill-opacity="0.85"/>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <path d="M110 228C106 196 125 174 158 174H399C431 174 450 195 448 228V497C451 529 430 552 397 550H160C129 551 108 530 112 497L110 228Z"/>
+    <path d="M158 230H399"/>
+    <path d="M165 278H378"/>
+    <path d="M165 315H352"/>
+    <path d="M165 352H332"/>
+    <path d="M165 389H369"/>
+    <path d="M165 427H318"/>
+    <rect x="145" y="190" width="82" height="22" rx="11" fill="#DCE8D9"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#24313A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M462 365C531 298 591 275 648 275"/>
+    <path d="M631 252L662 276L621 287"/>
+    <path d="M458 446C538 499 599 528 653 530"/>
+    <path d="M625 513L662 529L628 548"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <rect x="684" y="178" width="252" height="154" rx="18"/>
+    <path d="M708 205H912"/>
+    <rect x="737" y="230" width="146" height="70" rx="10" fill="#D6E8F5"/>
+    <path d="M750 252H869"/>
+    <path d="M750 276H835"/>
+    <path d="M727 313H890"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <rect x="684" y="385" width="252" height="154" rx="18"/>
+    <path d="M708 412H912"/>
+    <rect x="728" y="437" width="164" height="64" rx="10" fill="#E8DED0"/>
+    <path d="M751 457H868"/>
+    <path d="M751 480H829"/>
+    <circle cx="720" cy="496" r="10" fill="#DCE8D9"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <rect x="684" y="592" width="252" height="154" rx="18"/>
+    <path d="M708 619H912"/>
+    <rect x="730" y="647" width="160" height="60" rx="10" fill="#DCE8D9"/>
+    <path d="M752 667H868"/>
+    <path d="M752 692H820"/>
+    <path d="M893 656L905 669L926 643"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#24313A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M950 255C1036 255 1101 255 1164 285"/>
+    <path d="M1140 269L1177 291L1136 299"/>
+    <path d="M950 463C1034 463 1090 463 1163 462"/>
+    <path d="M1139 447L1178 463L1138 478"/>
+    <path d="M950 666C1030 646 1091 621 1161 585"/>
+    <path d="M1140 575L1177 577L1152 606"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <path d="M1199 190C1196 162 1213 146 1241 146H1443C1471 147 1487 163 1486 190V312C1488 340 1470 357 1443 357H1241C1214 357 1198 340 1199 312V190Z"/>
+    <path d="M1235 198H1443"/>
+    <path d="M1243 244H1406"/>
+    <path d="M1243 281H1383"/>
+    <path d="M1243 318H1354"/>
+
+    <rect x="1203" y="405" width="286" height="166" rx="18"/>
+    <path d="M1243 447H1438"/>
+    <path d="M1243 486H1386"/>
+    <path d="M1243 525H1412"/>
+    <path d="M1219 439L1233 454L1260 422"/>
+    <path d="M1219 479L1233 494L1260 462"/>
+
+    <path d="M1239 649L1307 620L1374 649V699C1374 745 1341 774 1307 792C1274 776 1239 747 1239 699V649Z"/>
+    <path d="M1282 699L1299 717L1331 678"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <path d="M1104 752C1136 725 1166 707 1192 699C1207 695 1218 708 1215 722C1210 751 1188 779 1156 799"/>
+    <path d="M1074 790C1096 776 1121 763 1146 752"/>
+  </g>
+</svg>

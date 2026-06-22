@@ -1,0 +1,86 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="roughen" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="1" seed="13" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.7"/>
+    </filter>
+    <filter id="paper" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="7" result="grain"/>
+      <feColorMatrix in="grain" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.08"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FBF8F1"/>
+  <rect width="1600" height="900" fill="#000000" filter="url(#paper)"/>
+
+  <ellipse cx="442" cy="706" rx="362" ry="98" fill="#E8DED0" fill-opacity="0.85"/>
+  <ellipse cx="1154" cy="202" rx="260" ry="96" fill="#D6E8F5" fill-opacity="0.75"/>
+  <ellipse cx="1260" cy="732" rx="220" ry="88" fill="#DCE8D9" fill-opacity="0.8"/>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <path d="M253 632H1346"/>
+    <path d="M368 632V730"/>
+    <path d="M1232 632V730"/>
+    <path d="M246 730H1350"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <rect x="464" y="426" width="365" height="191" rx="18"/>
+    <path d="M500 462H794"/>
+    <rect x="558" y="487" width="181" height="92" rx="10" fill="#D6E8F5"/>
+    <path d="M586 522H711"/>
+    <path d="M586 553H679"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M728 414C707 372 690 332 687 299C684 238 720 186 787 185C842 184 877 216 891 258C904 299 901 367 875 420"/>
+    <path d="M686 298C639 311 620 346 623 392C625 438 653 470 684 498"/>
+    <path d="M893 294C938 309 963 344 966 391C968 438 946 472 913 498"/>
+    <path d="M734 285C748 300 769 308 790 308C811 308 832 300 846 285"/>
+    <path d="M756 339C775 347 804 347 823 339"/>
+    <path d="M704 434C729 463 745 495 753 534"/>
+    <path d="M871 435C851 463 838 495 832 532"/>
+    <path d="M753 534C776 547 805 548 832 532"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <path d="M1030 560C1030 523 1058 495 1094 495H1178C1214 495 1242 523 1242 560V620C1242 656 1214 684 1178 684H1094C1058 684 1030 656 1030 620V560Z"/>
+    <circle cx="1136" cy="545" r="21" fill="#DCE8D9"/>
+    <path d="M1090 587H1182"/>
+    <path d="M1090 618H1163"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <path d="M1282 520C1282 491 1305 468 1334 468H1412C1441 468 1464 491 1464 520V576C1464 605 1441 628 1412 628H1334C1305 628 1282 605 1282 576V520Z"/>
+    <rect x="1315" y="499" width="114" height="26" rx="10" fill="#E8DED0"/>
+    <path d="M1316 551H1428"/>
+    <path d="M1316 582H1398"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <path d="M1138 248C1138 219 1160 197 1190 197H1268C1297 197 1320 219 1320 248V304C1320 333 1297 355 1268 355H1190C1160 355 1138 333 1138 304V248Z"/>
+    <circle cx="1229" cy="236" r="19" fill="#D6E8F5"/>
+    <path d="M1191 273H1279"/>
+    <path d="M1191 302H1259"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#24313A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1007 598C973 592 941 574 922 547"/>
+    <path d="M985 573L1008 598L975 607"/>
+    <path d="M1279 571C1254 582 1234 598 1222 616"/>
+    <path d="M1257 584L1286 568L1284 600"/>
+    <path d="M1187 355C1137 392 1090 443 1077 492"/>
+    <path d="M1080 466L1076 496L1104 484"/>
+  </g>
+
+  <g filter="url(#roughen)" stroke="#1F1F1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#FFFDF8">
+    <path d="M313 498C313 470 335 448 364 448H443C472 448 495 470 495 498V555C495 583 472 606 443 606H364C335 606 313 583 313 555V498Z"/>
+    <path d="M350 505H456"/>
+    <path d="M350 535H434"/>
+    <path d="M350 565H410"/>
+    <circle cx="337" cy="466" r="18" fill="#E8DED0"/>
+  </g>
+</svg>

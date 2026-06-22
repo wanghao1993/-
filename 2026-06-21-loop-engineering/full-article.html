@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x522b;&#x518d;&#x53ea;&#x5377; Prompt &#x4e86;&#xff1a;Loop Engineering &#x624d;&#x662f;&#x4e0b;&#x534a;&#x573a;&#xff0c;&#x4f46;&#x4f60;&#x4e5f;&#x4e0d;&#x7528;&#x614c;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="别再只卷-prompt-了loop-engineering-才是下半场但你也不用慌">别再只卷 Prompt 了：Loop Engineering 才是下半场，但你也不用慌</h1>
+<p>这两年聊 AI，最容易聊偏的一件事，就是大家总把注意力放在 prompt 上。</p>
+<p>仿佛只要提示词写得够巧，模型就会突然开窍，工作也会自动完成。</p>
+<p>但现在越来越多一线开发者已经换了视角。大家不再只问“这句话怎么说更有效”，而是开始问一个更像真实工作的题：</p>
+<p>这件事，能不能交给 AI 自己往下做？</p>
+<p>出了错怎么办？<br>
+做到哪一步要停？<br>
+什么时候该叫人来拍板？</p>
+<p>这套思路，最近有个越来越常见的名字：<code>Loop Engineering</code>。</p>
+<h2 id="loop-engineering-到底是什么">Loop Engineering 到底是什么</h2>
+<p>如果用一句人话解释，loop engineering 研究的不是“怎么问”，而是“怎么把一份工作设计成一个闭环”。</p>
+<p>这个闭环里，AI 不是只回你一句话，而是会按步骤往前推进：先理解任务，再看上下文，再动手，再验证，再修正，最后把结果交回来。</p>
+<p>所以它关心的重点，天然就跟 prompt engineering 不一样。</p>
+<p><code>Prompt Engineering</code> 更像单轮沟通。<br>
+<code>Loop Engineering</code> 更像流程编排。</p>
+<p>前者在意的是一句话怎么写。后者在意的是整件事怎么跑。</p>
+<p>这也是为什么现在很多人开始感觉到，单纯研究提示词已经不够了。模型会调工具、会读代码、会跑命令、会写文件之后，真正拉开差距的，已经不是谁更会写咒语，而是谁更会设计流程。</p>
+<h2 id="它和-promptharness-到底是什么关系">它和 Prompt、Harness 到底是什么关系</h2>
+<p>这里最容易混淆的，其实不是 prompt，而是 <code>harness</code>。</p>
+<p>我更愿意把这三个词理解成三个不同层次。</p>
+<p><code>Prompt</code> 是沟通层。<br>
+你要让模型知道目标是什么，约束是什么，输出长什么样。</p>
+<p><code>Harness</code> 是运行层。<br>
+这个词通常不是某个单独功能名，而是一个更宽的工程说法。它指的是模型外面那层“执行骨架”：工具调用、权限控制、沙箱、日志、回滚、测试、规则文件、检查点，这些都算。没有 harness，模型顶多会说；有了 harness，它才有手有脚，也有护栏。</p>
+<p><code>Loop</code> 是编排层。<br>
+它决定什么时候思考，什么时候查资料，什么时候执行，什么时候验证，什么时候停下来，什么时候把任务交给另一个 agent 或者交还给人。</p>
+<p>所以这三者不是互相替代，也不是谁升级谁。</p>
+<p>它们更像一套分层配合：</p>
+<ul>
+<li>prompt 负责把话说清楚</li>
+<li>harness 负责让系统能跑起来，而且别乱跑</li>
+<li>loop 负责把整件事串成闭环</li>
+</ul>
+<p>你可以只有 prompt，没有 loop，那更像聊天。<br>
+你可以有 harness，没有 loop，那只是工具箱。<br>
+你也可以硬做一个 loop，但 prompt 和 harness 都很弱，结果通常不稳定。</p>
+<p>真正好用的 agent 工作流，三层都得有。</p>
+<h2 id="一个具体例子怎么在-codexclaude-codecursor-里做-loop-engineering">一个具体例子：怎么在 Codex、Claude Code、Cursor 里做 loop engineering</h2>
+<p>拿一个很常见、也足够真实的任务举例：给一个现有 SaaS 项目接入 GitHub OAuth 登录。</p>
+<p>这事不算大，但也绝对不是一句“帮我加个登录”就能稳稳做完的。它至少会牵涉后端鉴权、前端入口、环境变量、回调地址、异常处理、测试，最后还得有人 review。</p>
+<p>如果只用 prompt，很多人的做法会是直接开口：</p>
+<p>“帮我加 GitHub OAuth 登录。”</p>
+<p>模型当然也能开始干，但这种做法很容易漂。它不知道你项目里有没有现成鉴权层，不知道你们测试怎么跑，不知道回调策略，也不知道哪些目录不能动。</p>
+<p>loop engineering 的做法不一样。它会先把这件事拆成一个闭环。</p>
+<h3 id="第一步先把长期上下文固定下来">第一步：先把长期上下文固定下来</h3>
+<p>这一层，说白了就是先把“默认工作方式”写进系统里。</p>
+<p>在 <code>Codex</code> 里，OpenAI 官方文档提到可以通过仓库中的 <code>AGENTS.md</code> 告诉 Codex 怎么理解代码库、该跑什么测试、遵守什么项目约定。Codex 的每个任务都在独立环境里跑，能读写文件，也能跑测试和命令。<a href="https://openai.com/index/introducing-codex/">OpenAI 官方介绍</a></p>
+<p>在 <code>Claude Code</code> 里，这一层通常落在 <code>CLAUDE.md</code>。Anthropic 的文档明确建议把代码风格、测试命令、工作流规则写进去。它还区分了 <code>CLAUDE.md</code> 这种“建议性上下文”和 <code>hooks</code> 这种“必须执行的确定性动作”，比如每次改完文件都自动跑一次 eslint。<a href="https://code.claude.com/docs/en/best-practices">Claude Code 官方文档</a></p>
+<p>在 <code>Cursor</code> 里，这一层更明显。它有 <code>.cursor/rules</code>、<code>AGENTS.md</code>、skills、subagents 这些机制。官方文档对 rules 的定义很直接：它们会作为持久上下文放进 agent 的前置提示里，保证模型每次都按同一套项目规则工作。<a href="https://cursor.com/docs/rules.html">Cursor 官方文档</a></p>
+<p>这一步的重点不是“写更多字”，而是把反复要解释的东西前置掉。</p>
+<p>比如：</p>
+<ul>
+<li>优先复用现有 auth 模块</li>
+<li>只跑和改动相关的测试</li>
+<li>不要改动 <code>migrations/</code></li>
+<li>UI 文案沿用现有登录页语气</li>
+<li>提交前必须跑 typecheck</li>
+</ul>
+<p>这一步做得好，后面每一轮都省心。</p>
+<h3 id="第二步先侦察不急着写">第二步：先侦察，不急着写</h3>
+<p>真正稳定的 loop，通常不会上来就改代码。</p>
+<p>它会先让 agent 看清局面：项目里有没有现成鉴权中间件？OAuth 工具是否已有？前端登录页在哪？环境变量从哪里注入？测试是 Jest、Vitest 还是 Playwright？</p>
+<p>在 <code>Claude Code</code> 和 <code>Cursor</code> 里，这类侦察特别适合交给 subagent。Anthropic 官方建议显式让 Claude 用 subagent 做代码探索和独立复查；Cursor 的 subagent 也支持独立上下文，甚至可以后台跑，避免主线程被一堆搜索结果塞满。<a href="https://code.claude.com/docs/en/best-practices">Claude Code 官方文档</a> <a href="https://cursor.com/docs/subagents.html">Cursor 官方文档</a></p>
+<p><code>Codex</code> 这边的思路也类似，只是它更偏“把侦察任务本身当成一个独立 agent 任务”来做。OpenAI 官方写得很明确：Codex 支持把多项任务并行分发到独立环境里跑，然后给你日志和测试证据。<a href="https://openai.com/index/introducing-codex/">OpenAI 官方介绍</a></p>
+<p>所以一个更像样的流程，不会是“直接做”，而是先分出一个发现阶段：</p>
+<ul>
+<li>一个 agent 查现有 auth 结构</li>
+<li>一个 agent 查前端登录入口和 UI 复用点</li>
+<li>一个 agent 查测试和环境配置</li>
+</ul>
+<p>先把图画出来，再动手。</p>
+<h3 id="第三步执行时别只靠一个-agent-闷头干">第三步：执行时别只靠一个 agent 闷头干</h3>
+<p>很多人理解 loop engineering，会以为它就是“放手让 AI 自己跑很久”。</p>
+<p>其实不是。</p>
+<p>它更像有节奏地分工。</p>
+<p>比如这个 OAuth 任务，完全可以拆成三段：</p>
+<ul>
+<li>一个 agent 只管后端登录流和回调</li>
+<li>一个 agent 只管前端入口和错误提示</li>
+<li>一个 agent 只管补测试和检查回归风险</li>
+</ul>
+<p><code>Claude Code</code> 官方文档很鼓励这种并行会话和 worktree 式隔离；<code>Cursor</code> 的 agent 和 subagent 也支持前后台分工；<code>Codex</code> 更是从产品设计上就在强调多任务并行和异步委派。<a href="https://code.claude.com/docs/en/best-practices">Claude Code 官方文档</a> <a href="https://cursor.com/docs/agent/overview.html">Cursor 官方文档</a> <a href="https://openai.com/index/introducing-codex/">OpenAI 官方介绍</a></p>
+<p>这一步真正改变的，不是“AI 更聪明了”，而是你的任务不再只有一条单线程。</p>
+<h2 id="第四步验证不是可选项是-loop-的一部分">第四步：验证，不是可选项，是 loop 的一部分</h2>
+<p>这一点非常关键。</p>
+<p>很多人一提 agent，就容易想象成“它自己做完，我来收货”。实际不是。一个没验证环节的 loop，很容易稳定地产出错结果，而且错得很勤快。</p>
+<p>这时候 harness 的价值就出来了。</p>
+<p><code>Codex</code> 会给出终端日志和测试输出，方便你检查它到底做了什么。<br>
+<code>Claude Code</code> 有 checkpoints，可以在试错后回退，还可以再起一个 subagent 做独立复查。<br>
+<code>Cursor</code> 有 checkpoints，也有 <code>Bugbot</code> 这种专门盯 PR diff 的审查流，甚至能在发现问题后继续拉起 cloud agent 做 autofix。<a href="https://openai.com/index/introducing-codex/">OpenAI 官方介绍</a> <a href="https://code.claude.com/docs/en/best-practices">Claude Code 官方文档</a> <a href="https://cursor.com/docs/bugbot.html">Cursor 官方文档</a></p>
+<p>一个完整的 loop，到这里至少应该包括：</p>
+<ul>
+<li>功能测试过没过</li>
+<li>类型检查过没过</li>
+<li>有没有超出任务范围的改动</li>
+<li>有没有安全和边界问题</li>
+<li>有没有人类必须拍板的地方</li>
+</ul>
+<p>注意，review 不是对 agent 不信任。</p>
+<p>而是因为你终于把 AI 当成真的执行者了。既然是执行者，就应该进正式流程，而不是靠“感觉差不多”。</p>
+<h2 id="第五步人类不是被替代而是被抬高了一层">第五步：人类不是被替代，而是被抬高了一层</h2>
+<p>这大概也是 loop engineering 最容易被误解的地方。</p>
+<p>很多人一听这个词，就开始紧张：是不是以后不会写 prompt、不会写代码的人都要掉队？</p>
+<p>我觉得没必要先把自己吓到。</p>
+<p>因为 loop engineering 真正改变的，不是“人没用了”，而是“人做的那层事情变了”。</p>
+<p>以前你可能更像操作员，一句一句盯着改。<br>
+以后你更像负责人，决定目标、约束、节奏、验收和风险边界。</p>
+<p>说得现实一点，团队里真正稀缺的能力，从来都不只是写出一段代码。</p>
+<p>而是知道：</p>
+<ul>
+<li>什么问题值得做</li>
+<li>怎么拆才不会失控</li>
+<li>哪些地方能自动化</li>
+<li>哪些地方必须人工接管</li>
+</ul>
+<p>这些能力，本来就是人的长项。</p>
+<p>所以别把 loop engineering 理解成又一个必须立刻掌握的新名词。它更像是把很多你本来就在做的工程习惯，重新安到 AI 工作流里。</p>
+<p>你以前会写文档、会分任务、会做 code review、会设测试门槛。现在只是多了一个执行者，而这个执行者需要你把流程讲清楚。</p>
+<p>这不是把门槛抬到天上去。</p>
+<p>这更像是把“会提问”往前推了一步，变成“会带活”。</p>
+<h2 id="最后一句">最后一句</h2>
+<p>如果你现在还不擅长 loop engineering，真的不用焦虑。</p>
+<p>因为它不是一门突然冒出来、完全陌生的新技术。它只是把老问题重新问了一遍：</p>
+<p>你能不能把一件工作说清楚，拆清楚，盯清楚，收清楚？</p>
+<p>prompt 当然还重要。<br>
+harness 当然也重要。<br>
+但真正让 AI 开始像同事，而不是像聊天机器人，靠的是 loop。</p>
+<p>这才是下半场。</p>
+
+            
+            
+        </body>
+        </html>
