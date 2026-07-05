@@ -60,7 +60,7 @@
 前者在意的是一句话怎么写。  
 后者在意的是整件事怎么跑。
 
-![Loop 分层手绘配图](./images/loop-layer-sketch.svg)
+![Loop 分层手绘配图](https://ai-explorer-1302483222.cos.ap-guangzhou.myqcloud.com/wx/%E5%B7%B2%E7%94%9F%E6%88%90%E5%9B%BE%E5%83%8F%201.png)
 
 *图 1：从 prompt 到 harness 再到 loop，它们不是一个层面的东西。*
 
