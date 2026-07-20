@@ -1,127 +1,127 @@
 ---
 name: write-developer-growth-wechat
-description: Create, revise, or package Simplified-Chinese WeChat public-account articles for developers using strong topic selection, benefit-led titles, progressive technical explanation, code or experiment evidence, and a repeatable follow-conversion structure. Use for AI tools, Agent workflows, programming tutorials, source-code deep dives, technical news analysis, tool roundups, interview-style explainers, and requests to benchmark the content mechanics of 程序员成长指北 without copying its wording.
+description: 为开发者创作、修改或整理简体中文公众号文章。通过选题筛选、结果型标题、层层深入的技术解释、代码或实验依据，以及稳定的关注转化结构，提高文章的可读性和传播力。适用于 AI 工具、Agent 工作流、编程教程、源码分析、技术新闻解读、工具盘点、面试题讲解，以及借鉴「程序员成长指北」的内容机制但不照搬原文的任务。
 ---
 
-# Write Developer Growth WeChat
+# 开发者公众号增长写作
 
-Build articles with a high-click outer layer and a trustworthy technical core. Adapt the mechanics to the author's real experience; never imitate sentences, anecdotes, identity, or unverifiable claims.
+用容易点击的表达吸引读者，再用可靠的技术内容留住读者。只借鉴成熟账号的内容机制，案例、观点和证据必须来自作者自己的经历，不能照搬别人的句子、人设或故事。
 
-## Load resources
+## 使用配套资料
 
-- Read [references/benchmark.md](references/benchmark.md) when selecting a content mode, title pattern, or article structure.
-- Copy and fill [assets/article-template.md](assets/article-template.md) when creating a new article package.
+- 选择内容类型、标题写法或文章结构时，读取 [references/benchmark.md](references/benchmark.md)。
+- 新建文章时，复制并填写 [assets/article-template.md](assets/article-template.md)。
 
-## Workflow
+## 写作流程
 
-### 1. Read the workspace and source material
+### 1. 阅读工作区和原始材料
 
-1. Read repository instructions and the target article folder.
-2. Read supplied notes, links, screenshots, code, tests, and prior related articles.
-3. If the topic is current, disputed, technical, or factual, research primary sources before outlining.
-4. Record the source date and product or library version. Treat stale claims as hypotheses until verified.
+1. 先阅读仓库说明和目标文章目录。
+2. 阅读用户提供的笔记、链接、截图、代码、测试结果和相关文章。
+3. 只要涉及最新变化、争议、技术事实或数据，就先查一手资料，再写提纲。
+4. 记录资料日期、产品版本和依赖版本。旧资料只能作为线索，不能直接当作当前事实。
 
-### 2. Choose one content mode
+### 2. 确定一种主要内容类型
 
-Choose exactly one primary mode:
+每篇文章只选一种主要类型：
 
-| Mode | Use it for | Required original value |
+| 类型 | 适用场景 | 必须提供的原创内容 |
 |---|---|---|
-| Fast signal | Releases, policy changes, new tools | Explain who should care, what changes, and what to do next |
-| Practical tutorial | A concrete developer problem | Reproducible steps, code, limitations, and verification |
-| Source deep dive | Agent, framework, or library internals | Architecture, data flow, key code, and transferable lessons |
-| Scenario explainer | Concepts that feel abstract | A realistic interview, incident, or debugging scenario |
-| Curated stack | Tool or ecosystem overview | Selection criteria, trade-offs, and a recommended path |
+| 快速解读 | 新版本、规则变化、新工具 | 谁需要关心、具体变了什么、下一步怎么做 |
+| 实战教程 | 一个明确的开发问题 | 可复现步骤、代码、限制和验证结果 |
+| 源码深挖 | Agent、框架或工具内部机制 | 架构、数据流、关键代码和可迁移的经验 |
+| 场景讲解 | 难懂的技术概念 | 真实可信的面试、事故或排错场景 |
+| 工具盘点 | 工具链或生态梳理 | 选择标准、取舍和推荐路径 |
 
-Reject a topic if it has no clear target reader, no timely or durable value, or no original increment beyond source summary.
+找不到明确读者、长期或当下价值、个人判断和独有证据时，先不要写。
 
-### 3. Score the topic
+### 3. 给选题打分
 
-Score each dimension from 0 to 5:
+每项按 0～5 分计算：
 
-- Audience pain × 25%
-- Freshness or search durability × 15%
-- Original increment × 25%
-- Proof availability × 25%
-- Series potential × 10%
+- 读者痛点：25%
+- 时效性或搜索价值：15%
+- 原创增量：25%
+- 可验证程度：25%
+- 系列潜力：10%
 
-Proceed at 3.5/5 or higher. If proof availability or original increment is below 3, research or test before drafting.
+总分达到 3.5 分再进入写作。如果原创增量或可验证程度低于 3 分，先补研究或实验。
 
-### 4. Build the one-page brief
+### 4. 写一页简报
 
-Write these fields before writing prose:
+动笔前先写清楚：
 
-- Target reader
-- One problem
-- One promised result
-- Why now
-- Main conclusion
-- Original increment
-- Proof assets: code, screenshots, logs, timing, cost, comparison, or source excerpts
-- One follow-up article
-- One natural call to action
+- 目标读者
+- 这篇只解决的一个问题
+- 承诺交付的一个结果
+- 为什么现在值得写
+- 核心结论
+- 相比现有资料多提供了什么
+- 证据：代码、截图、日志、耗时、成本、对比或一手资料
+- 可以接着写的下一篇
+- 自然的互动或关注引导
 
-Keep one article focused on one primary promise.
+一篇文章只承担一个主要承诺。
 
-### 5. Create and score titles
+### 5. 生成并筛选标题
 
-Generate at least 10 options across four patterns:
+至少生成 10 个标题，覆盖下面四种写法：
 
-1. Familiar tool + surprising change
-2. Pain + concrete result
-3. Number or constraint + strong benefit
-4. Question or interview scene + underlying principle
+1. 熟悉的工具 + 意外变化
+2. 明确痛点 + 具体结果
+3. 数字或限制条件 + 明确收益
+4. 问题或面试场景 + 背后原理
 
-Score each title from 0 to 2 on clarity, audience fit, concrete benefit, curiosity, and evidence match. Recommend the highest-scoring title.
+从清晰度、读者匹配、具体收益、好奇心和正文支撑五个方面评分，每项 0～2 分，推荐总分最高的标题。
 
-Do not use `重磅`, `炸裂`, `史上最强`, `彻底`, or absolute rankings unless the body proves the claim. Never promise a result the article does not deliver.
+除非正文能证明，否则不要使用「重磅」「炸裂」「史上最强」「彻底」或绝对排名。标题承诺的结果必须在正文兑现。
 
-### 6. Draft the article
+### 6. 写正文
 
-Use this sequence unless the content mode requires a small adjustment:
+没有特殊原因时，按下面的顺序写：
 
-1. Open with a concrete situation, friction, result, or contradiction in 80–160 Chinese characters.
-2. State why the reader should care and preview the conclusion.
-3. Move from the smallest useful answer to deeper explanation.
-4. Add evidence at every major claim: runnable code, screenshot, output, source, table, or explicit reasoning.
-5. Explain edge cases, cost, risk, and who should not use the approach.
-6. End with a short decision summary or checklist.
-7. Use a specific next-issue CTA. Invite discussion or following naturally; never require sharing, likes, or `在看` in exchange for materials.
+1. 用 80～160 个汉字写一个具体场景、麻烦、结果或矛盾。
+2. 说明这件事为什么和读者有关，并提前给出核心结论。
+3. 先给最小可用答案，再逐步解释原理。
+4. 主要判断都要有依据，例如可运行代码、截图、输出、来源、表格或推理过程。
+5. 说明边界、成本、风险，以及哪些人不适合采用这个方案。
+6. 用简短清单或决策建议收尾。
+7. 预告一个具体的后续主题，自然邀请讨论或关注。不能用资料交换诱导转发、点赞或点「在看」。
 
-Keep paragraphs short for mobile reading. Prefer direct verbs, concrete nouns, and first-hand observations. Remove generic scene-setting, inflated claims, repetitive transitions, and motivational filler.
+段落要短，方便手机阅读。多用直接的动词和具体名词，优先写亲自观察到的结果。删掉空泛铺垫、夸张判断、重复转折和励志口号。
 
-### 7. Verify the technical core
+### 7. 核验技术内容
 
-Before packaging:
+整理发布稿前逐项检查：
 
-- Confirm every version, benchmark, price, date, API, and product capability against a primary source.
-- Run code or clearly label it as illustrative and unverified.
-- Separate official claims, third-party measurements, and the author's inference.
-- Check that screenshots and code support the stated conclusion.
-- Add attribution for translations, adapted tutorials, and quoted ideas.
-- Declare AI-generated or AI-edited media when current platform rules require it.
+- 版本、基准数据、价格、日期、API 和产品能力是否有一手来源。
+- 代码是否实际运行过；如果没有，要明确标注为示意代码，尚未验证。
+- 官方说法、第三方测试和作者推断是否分开表达。
+- 截图和代码能否支撑正文结论。
+- 翻译、改编、引用是否注明来源。
+- 使用 AI 生成或修改的图片、音频、视频等内容，是否按当前平台规则完成声明和标识。
 
-### 8. Package the deliverables
+### 8. 整理交付文件
 
-Follow the workspace article-package rules. Produce:
+遵守工作区的文章目录规则，输出：
 
-- `full-article.md`: complete source draft
-- `summary.md`: thesis, structure, and reusable lines
-- `wechat-ready.md`: title options, recommended title, lead, body, optional closing line, and references
-- `images/`: article-specific assets using relative Markdown paths
-- HTML only when a confirmation or exported document is requested by workspace rules
+- `full-article.md`：完整初稿
+- `summary.md`：核心观点、文章结构和可复用句子
+- `wechat-ready.md`：标题备选、推荐标题、导语、正文、可选结尾和参考资料
+- `images/`：文章专用图片，Markdown 中使用相对路径
+- 工作区要求确认稿或导出稿时，再提供 HTML
 
-Also provide two朋友圈 introductions and one 30–60 second video outline when growth distribution is in scope.
+如果任务包含增长分发，再补充两版朋友圈文案和一份 30～60 秒短视频提纲。
 
-## Final quality gate
+## 交付前检查
 
-Do not finish until all answers are yes:
+下面的问题全部回答「是」，才能完成：
 
-- Can a developer identify within 10 seconds whether this article is for them?
-- Does the first screen contain a concrete problem or result?
-- Is there at least one piece of evidence that cannot be produced by generic rewriting?
-- Does the article explain both how and why?
-- Are limitations and unsuitable cases present?
-- Does the title accurately match the body?
-- Is the text recognizably this author's experience rather than another account's persona?
-- Are sources and reused ideas attributed?
+- 开头 10 秒内，开发者能否判断这篇文章和自己是否有关？
+- 第一屏是否已经出现具体问题或结果？
+- 是否至少有一个无法靠泛泛改写得到的证据？
+- 是否同时讲清楚了怎么做和为什么？
+- 是否写明限制条件和不适用情况？
+- 标题和正文是否一致？
+- 文中的经历是否确实属于当前作者，而不是借来的故事？
+- 引用和改编内容是否注明来源？

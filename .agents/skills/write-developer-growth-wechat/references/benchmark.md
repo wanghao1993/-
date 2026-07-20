@@ -1,105 +1,105 @@
-# 程序员成长指北：内容机制基准
+# 「程序员成长指北」内容机制参考
 
-Use this reference to borrow repeatable editorial mechanics, not wording or identity.
+这里只借鉴可以重复使用的编辑方法，不照搬原文、人设和个人经历。
 
-## 1. Account evolution
+## 1. 账号经历了两个阶段
 
-### Early trust layer
+### 早期：建立技术信任
 
-- The account began with a narrow JavaScript → Node.js → backend-database learning path.
-- It built recognizable series, practical code articles, a named author persona, and a Node.js community.
-- Public archives show long-term multi-platform distribution through SegmentFault, Tencent Cloud, CSDN/DevPress, Juejin, and GitHub.
+- 内容集中在 JavaScript、Node.js 和后端数据库，学习路线明确。
+- 通过系列文章、实用代码、固定作者形象和 Node.js 社群积累读者。
+- 文章长期分发到 SegmentFault、腾讯云、CSDN/DevPress、掘金和 GitHub，获得搜索流量。
 
-### Current traffic layer
+### 近期：扩大内容触达
 
-- Recent topics follow developer attention closely: AI coding tools, Agent frameworks, WebMCP, Vue skills, OpenClaw/nanobot, framework releases, and career signals.
-- The mix includes original tutorials, source deep dives, translations or adaptations, ecosystem roundups, and fast release summaries.
-- Titles frequently combine a familiar technology with a concrete change, result, tension, or question.
+- 选题紧跟开发者注意力，包括 AI 编程工具、Agent 框架、WebMCP、Vue Skills、OpenClaw/nanobot、框架更新和求职信息。
+- 内容类型比较丰富，有原创教程、源码分析、翻译改编、生态盘点和版本快讯。
+- 标题常把熟悉的技术名词和具体变化、结果、矛盾或问题放在一起。
 
-## 2. Repeatable strengths
+## 2. 值得借鉴的做法
 
-1. **Clear audience:** front-end, Node.js, and increasingly AI-assisted developers.
-2. **High topic density:** select tools or changes already adjacent to a developer's daily work.
-3. **Fast first screen:** state the problem, contrast, or headline result immediately.
-4. **Progressive explanation:** start with what the reader recognizes, then move into mechanism, code, and edge cases.
-5. **Scan-friendly structure:** short paragraphs, many subheads, lists, code blocks, screenshots, and comparison tables.
-6. **Fixed conversion block:** repeat account identity, community entry, and next action consistently.
-7. **Cross-platform shelf life:** republish and archive technical material where search can continue to surface it.
-8. **Series continuity:** link related articles and make the reader expect a next installment.
+1. **读者明确**：早期面向前端和 Node.js 开发者，近期扩展到使用 AI 编程工具的人群。
+2. **选题离工作很近**：优先选择开发者正在使用或刚刚听说的工具、版本和问题。
+3. **开头快**：直接给出问题、反差或主要结果，不写冗长背景。
+4. **解释逐步深入**：从读者熟悉的现象讲起，再进入原理、代码和边界条件。
+5. **适合扫读**：短段落、多级标题、清单、代码块、截图和对比表格较多。
+6. **转化入口固定**：反复出现账号介绍、社群入口和下一步动作。
+7. **重视搜索长尾**：把技术内容同步到开发者社区，让文章在公众号推送后仍能被搜索到。
+8. **持续做系列**：关联旧文章，也让读者知道后面还会继续更新什么。
 
-## 3. Common article patterns
+## 3. 常见文章模板
 
-### A. Interview explainer
+### A. 面试对话型
 
-Title a familiar interview question. Open with a realistic dialogue, reveal the shallow answer, then guide the reader toward the mechanism. End with a concise interview-ready answer.
+用常见面试问题做标题。开头安排一段可信的对话，先暴露常见的浅层回答，再逐步解释原理，最后整理一份可以直接用于面试的答案。
 
-Observed example: `面试官：为什么在 Vue3 中 ref 变量要用 .value？`
+参考文章：`面试官：为什么在 Vue3 中 ref 变量要用 .value？`
 
-### B. Build-a-tool tutorial
+### B. 动手造工具型
 
-Open with a personal friction point and an explicit constraint. Show folder structure, minimal code, feature increments, local testing, packaging, and lessons learned.
+先说一个本人遇到的麻烦和限制条件，然后展示目录结构、最小实现、功能补充、本地测试、打包流程和实际收获。
 
-Observed example: `只用 JavaScript，我写了一个无需后端的网页数据爬取神器！`
+参考文章：`只用 JavaScript，我写了一个无需后端的网页数据爬取神器！`
 
-### C. Curated ecosystem map
+### C. 生态盘点型
 
-Explain why the ecosystem matters now, group tools by job-to-be-done, give installation snippets, and finish with a recommended stack.
+先解释为什么现在需要重新梳理这套生态，再按任务类型划分工具，给出安装方式和使用场景，最后推荐一套组合。
 
-Observed example: `Vue3 开发全套组合拳，神器一次看全！`
+参考文章：`Vue3 开发全套组合拳，神器一次看全！`
 
-### D. Fast release digest
+### D. 版本快讯型
 
-Open with the release, list headline benchmarks or capabilities, connect them to a familiar tool, then explain practical use. This pattern is fast but requires the strictest primary-source verification.
+开头直接给出发布信息和主要变化，然后整理官方能力、数据、应用场景和使用方法。这类文章写得快，但更容易出现过时或夸大的信息，必须优先核对官方资料。
 
-Observed example: `Claude 4.5发布！Cursor 宣布加量不加价支持！`
+参考文章：`Claude 4.5发布！Cursor 宣布加量不加价支持！`
 
-### E. Incident-led deep dive
+### E. 事故复盘型
 
-Open with an operational failure, show why the obvious fix is insufficient, introduce the key API or architecture, then evolve toward a production-ready solution.
+从一次故障或排错经历切入，解释常见修复为什么不够，再引出关键 API 或架构方案，逐步改造成可以在生产环境使用的实现。
 
-Observed example: `常被忽视的 Node.js 功能，彻底改善了日志体验`
+参考文章：`常被忽视的 Node.js 功能，彻底改善了日志体验`
 
-### F. Source-code architecture deep dive
+### F. 源码架构型
 
-Use a strong scale contrast, show setup and architecture, follow one request through the system, inspect key files, and extract reusable design lessons.
+先用规模或设计差异引起兴趣，然后依次讲安装、整体架构和数据流。沿着一次真实请求查看关键文件，最后总结可以迁移到其他项目的设计经验。
 
-Observed example: `从 nanobot 理解 openclaw 核心设计`
+参考文章：`从 nanobot 理解 openclaw 核心设计`
 
-## 4. Do not imitate these weaknesses
+## 4. 不要照着学的地方
 
-- Do not let high frequency replace original evidence.
-- Do not repeat superlatives or urgency words until every title sounds the same.
-- Do not present vendor benchmarks as independent proof.
-- Do not publish translated or adapted material without conspicuous attribution.
-- Do not copy the author's fixed Node community CTA; create a conversion path relevant to `说点AI`.
-- Do not copy personal anecdotes or first-person claims that did not happen.
+- 不能为了高频更新放弃原创证据。
+- 不要反复使用最高级和紧迫词，最后每个标题都像同一篇文章。
+- 厂商公布的基准数据不能直接当作独立结论。
+- 翻译和改编内容必须清楚标注来源。
+- 不要复制对方固定的 Node.js 社群引导，要为「说点AI」设计自己的转化路径。
+- 不能把别人的经历改成第一人称，冒充自己的故事。
 
-## 5. Adaptation for 说点AI
+## 5. 适配「说点AI」
 
-Use the formula:
+推荐采用这个组合：
 
-> 程序员成长指北的流量外壳 × 说点AI的真实实验内核
+> 「程序员成长指北」的传播结构 × 「说点AI」的真实实验
 
-Recommended mix:
+内容比例建议：
 
-- 40% AI/Agent real-project tutorials
-- 25% source-code or workflow deep dives
-- 20% timely tools and releases with original judgment
-- 10% comparison or curated stacks
-- 5% AI × Web3 only when a real build or user case exists
+- 40%：AI/Agent 真实项目教程
+- 25%：源码或工作流分析
+- 20%：带个人判断的工具和版本解读
+- 10%：工具对比或生态盘点
+- 5%：只有真实产品、代码或用户场景时才写 AI × Web3
 
-Keep the differentiator visible: a full-stack developer has tested the workflow, measured the result, and explained the failure boundary.
+每篇都要保留「说点AI」自己的识别点：由全栈开发者亲自测试，记录实际结果，也说明失败边界。
 
-## 6. Source samples
+## 6. 分析样本
 
-- Account positioning and archive: https://segmentfault.com/blog/growth/about
-- Public content archive and topic breadth: https://cloud.tencent.com/developer/column/79050
-- Interview explainer: https://agent.csdn.net/6a50a4ca10ee7a33f28c37fd.html
-- Build-a-tool tutorial: https://agent.csdn.net/6a50a0f210ee7a33f28c2edb.html
-- Vue ecosystem roundup: https://agent.csdn.net/6a509941662f9a54cb8df9be.html
-- Node.js incident-led deep dive: https://agent.csdn.net/6a4f374710ee7a33f28af6d6.html
-- Current Vue AI skill article: https://devpress.csdn.net/xclaw/69b4caf20a2f6a37c59738cb.html
-- Current nanobot source deep dive: https://devpress.csdn.net/xclaw/69c399c20a2f6a37c59a3731.html
-- Recent feed snapshot: https://fed.chanceyu.com/?id=bcdcba287995a70e4c3da99c0c0e96ed
+- 账号定位与早期归档：https://segmentfault.com/blog/growth/about
+- 公开文章归档与主题分布：https://cloud.tencent.com/developer/column/79050
+- 面试对话型：https://agent.csdn.net/6a50a4ca10ee7a33f28c37fd.html
+- 动手造工具型：https://agent.csdn.net/6a50a0f210ee7a33f28c2edb.html
+- Vue 生态盘点：https://agent.csdn.net/6a509941662f9a54cb8df9be.html
+- Node.js 事故复盘：https://agent.csdn.net/6a4f374710ee7a33f28af6d6.html
+- 近期 Vue AI Skill 文章：https://devpress.csdn.net/xclaw/69b4caf20a2f6a37c59738cb.html
+- 近期 nanobot 源码分析：https://devpress.csdn.net/xclaw/69c399c20a2f6a37c59a3731.html
+- 近期选题索引：https://fed.chanceyu.com/?id=bcdcba287995a70e4c3da99c0c0e96ed
 
-These pages are public mirrors or archives and may not equal the exact WeChat typesetting or current backend metrics. Use them for content-mechanics analysis only.
+这些页面包含公开镜像、社区归档和 RSS 索引，未必保留公众号的完整排版，也不能代表当前后台数据。只用它们分析公开可见的选题和文章结构。
