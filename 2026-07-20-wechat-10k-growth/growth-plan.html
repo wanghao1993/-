@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>「说点AI」0 → 1 万粉增长路线图</title>
+  <style>
+    :root {
+      --ink: #15211b;
+      --muted: #64736b;
+      --paper: #f5f3eb;
+      --card: rgba(255, 255, 255, 0.82);
+      --line: #d8ddd8;
+      --green: #0f6b49;
+      --green-soft: #dcefe5;
+      --yellow: #ffc93c;
+      --red: #a04435;
+      --shadow: 0 18px 55px rgba(28, 47, 37, 0.09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% -10%, rgba(255, 201, 60, 0.20), transparent 28rem),
+        radial-gradient(circle at 100% 8%, rgba(15, 107, 73, 0.12), transparent 30rem),
+        var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+
+    a { color: var(--green); }
+    .page { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 40px 0 88px; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 56px;
+      border: 1px solid rgba(15, 107, 73, 0.18);
+      border-radius: 28px;
+      color: white;
+      background: linear-gradient(135deg, #10261b 0%, #114d38 58%, #0f6b49 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "10K";
+      position: absolute;
+      right: -14px;
+      bottom: -70px;
+      color: rgba(255,255,255,.08);
+      font: 800 220px/1 Inter, sans-serif;
+      letter-spacing: -12px;
+    }
+
+    .eyebrow { margin: 0 0 10px; color: #d8f0e4; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { max-width: 780px; margin: 0; font-size: clamp(38px, 7vw, 76px); line-height: 1.05; letter-spacing: -.04em; }
+    .hero p { max-width: 720px; margin: 24px 0 0; color: rgba(255,255,255,.78); font-size: 18px; }
+    .hero .thesis { margin-top: 32px; padding-left: 18px; border-left: 4px solid var(--yellow); color: white; font-size: 20px; font-weight: 650; }
+
+    .nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 40px; }
+    .nav a { padding: 8px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: rgba(255,255,255,.7); text-decoration: none; font-size: 13px; }
+    section { margin-top: 54px; }
+    h2 { margin: 0 0 18px; font-size: clamp(27px, 4vw, 40px); line-height: 1.2; letter-spacing: -.03em; }
+    h3 { margin: 0 0 8px; font-size: 19px; }
+    .lead { max-width: 800px; color: var(--muted); font-size: 17px; }
+    .grid { display: grid; gap: 18px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: 0 10px 28px rgba(29,42,34,.045); }
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+    .label { display: inline-block; margin-bottom: 10px; padding: 3px 9px; border-radius: 999px; color: var(--green); background: var(--green-soft); font-size: 12px; font-weight: 700; }
+    .label.warn { color: var(--red); background: #f7e5df; }
+    .quote { padding: 24px 28px; border-left: 5px solid var(--yellow); background: #fff9df; font-size: 19px; font-weight: 650; }
+    .muted { color: var(--muted); }
+    ul, ol { padding-left: 1.25em; }
+    li + li { margin-top: 6px; }
+
+    table { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; background: rgba(255,255,255,.72); }
+    th, td { padding: 15px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: #fff; background: var(--green); font-size: 13px; letter-spacing: .03em; }
+    tr:last-child td { border-bottom: 0; }
+
+    .profile { display: grid; grid-template-columns: 80px 1fr; gap: 18px; align-items: center; }
+    .avatar { display: grid; width: 80px; height: 80px; place-items: center; border-radius: 50%; color: #fff; background: #101720; font-size: 30px; }
+    .profile strong { font-size: 24px; }
+    .profile p { margin: 2px 0; color: var(--muted); }
+
+    .formula { display: grid; grid-template-columns: repeat(5, auto); gap: 10px; align-items: center; justify-content: start; margin: 18px 0; font-weight: 750; }
+    .formula span:nth-child(odd) { padding: 11px 15px; border-radius: 10px; background: white; }
+    .calculator { padding: 28px; border-radius: 20px; color: white; background: #142b20; }
+    .calculator h3 { font-size: 24px; }
+    .inputs { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin: 20px 0; }
+    label { color: rgba(255,255,255,.65); font-size: 12px; }
+    input { width: 100%; margin-top: 5px; padding: 11px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 9px; color: white; background: rgba(255,255,255,.08); font: inherit; }
+    .outputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .metric { padding: 15px; border-radius: 12px; background: rgba(255,255,255,.08); }
+    .metric b { display: block; color: var(--yellow); font-size: 25px; }
+    .metric small { color: rgba(255,255,255,.62); }
+
+    .phase { position: relative; padding-left: 34px; }
+    .phase::before { content: ""; position: absolute; left: 9px; top: 10px; bottom: -28px; width: 2px; background: #aac6b7; }
+    .phase:last-child::before { display: none; }
+    .phase::after { content: ""; position: absolute; left: 2px; top: 7px; width: 16px; height: 16px; border: 4px solid var(--paper); border-radius: 50%; background: var(--green); }
+    .phase + .phase { margin-top: 30px; }
+    .phase h3 { font-size: 22px; }
+
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { position: relative; padding: 12px 14px 12px 44px; border-bottom: 1px solid var(--line); }
+    .checklist li::before { content: "□"; position: absolute; left: 15px; top: 9px; color: var(--green); font-size: 22px; }
+    .checklist li:last-child { border-bottom: 0; }
+    .footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 760px) {
+      .page { width: min(100% - 22px, 1120px); padding-top: 12px; }
+      .hero { padding: 34px 24px; border-radius: 20px; }
+      .hero::after { font-size: 130px; bottom: -35px; }
+      .grid.two, .grid.three, .inputs, .outputs { grid-template-columns: 1fr; }
+      .formula { grid-template-columns: 1fr; }
+      .formula b { display: none; }
+      table { display: block; overflow-x: auto; white-space: nowrap; }
+      td { white-space: normal; min-width: 180px; }
+    }
+
+    @media print {
+      body { background: white; }
+      .page { width: 100%; padding: 0; }
+      .hero, .card, .calculator { box-shadow: none; }
+      .nav { display: none; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Growth Blueprint · 2026.07</p>
+      <h1>「说点AI」<br />0 → 1 万粉路线图</h1>
+      <p>适用定位：全栈开发者 × AI 实战。建议周期：若当前不足 1,000 粉，按 9–12 个月设计；已有 1,000–3,000 粉，可压缩到 6–9 个月。</p>
+      <p class="thesis">一万粉不是靠“多写”堆出来的，而是靠一个稳定循环：真实实验 → 高价值内容 → 精准分发 → 数据复盘 → 系列化复制。</p>
+    </header>
+
+    <nav class="nav" aria-label="文档目录">
+      <a href="#diagnosis">账号诊断</a>
+      <a href="#positioning">定位</a>
+      <a href="#math">增长算式</a>
+      <a href="#content">内容系统</a>
+      <a href="#roadmap">阶段路线</a>
+      <a href="#days90">90 天计划</a>
+      <a href="#metrics">复盘指标</a>
+      <a href="#actions">马上执行</a>
+    </nav>
+
+    <section id="diagnosis">
+      <h2>先说结论：方向对，但还不够锋利</h2>
+      <div class="card profile">
+        <div class="avatar">AI</div>
+        <div>
+          <strong>说点AI ⭐</strong>
+          <p>当前标签：AI 不会取代你，但会用 AI 的人会。全栈开发者 × Web3 探索者。</p>
+          <p>当前内容：AI 实战工具、编程提效技巧、技术趋势。</p>
+        </div>
+      </div>
+      <div class="grid two" style="margin-top:18px">
+        <article class="card">
+          <span class="label">已经具备</span>
+          <h3>可信的人设底座</h3>
+          <ul>
+            <li>全栈开发者身份天然适合做“亲测型”AI 内容。</li>
+            <li>现有《Loop Engineering》《Skills》两篇文章，已经形成 Agent 工作流的专业方向。</li>
+            <li>文章不是简单搬运新闻，有清晰判断和工程视角。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="label warn">当前瓶颈</span>
+          <h3>关注理由还不够具体</h3>
+          <ul>
+            <li>“AI 工具 + 编程 + 趋势 + Web3”跨度偏大，读者难以一句话复述账号价值。</li>
+            <li>“AI 不会取代你……”传播度高，但已成为通用表达，区分度有限。</li>
+            <li>现有内容偏概念解释，缺少真实项目、数据前后对比、代码与失败过程。</li>
+            <li>连续两篇都从“别再卷 Prompt”切入，容易形成重复感。</li>
+          </ul>
+        </article>
+      </div>
+      <p class="quote">真正应该抢占的心智不是“一个讲 AI 的号”，而是“遇到 AI 工具和 Agent 工作流，我想先看看这个全栈开发者亲测后的结论”。</p>
+    </section>
+
+    <section id="positioning">
+      <h2>建议定位：全栈开发者的 AI 实战笔记</h2>
+      <p class="lead">保留「说点AI」这个名字。主赛道收窄到 AI 工作流与编程提效；Web3 只在与 AI 有真实交叉实验时出现，不再与 AI 并列争夺首页标签。</p>
+      <div class="grid three">
+        <article class="card">
+          <span class="label">核心读者</span>
+          <h3>22–38 岁技术工作者</h3>
+          <p>开发者、技术产品经理、独立开发者，以及需要把 AI 真正接进日常工作的知识工作者。</p>
+        </article>
+        <article class="card">
+          <span class="label">核心痛点</span>
+          <h3>工具很多，但不会落地</h3>
+          <p>不知道选什么、怎么接进工作流、是否真能省时间，更担心教程只展示成功、不讲翻车。</p>
+        </article>
+        <article class="card">
+          <span class="label">内容承诺</span>
+          <h3>亲测、可复用、有证据</h3>
+          <p>每篇至少提供一种证据：截图、代码、耗时对比、成本、失败记录或可领取的模板。</p>
+        </article>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h3>建议改版后的账号简介</h3>
+        <p style="font-size:20px; margin:10px 0 0"><strong>全栈开发者的 AI 实战笔记。亲测工具、Agent 工作流和编程提效，只写真实项目、失败过程与可复用方法。每周二、周五更新。</strong></p>
+        <p class="muted">如果简介字数受限，短版：全栈开发者的 AI 实战笔记｜亲测工具、Agent 工作流与编程提效｜每周二、周五更新。</p>
+      </div>
+    </section>
+
+    <section id="math">
+      <h2>先把“一万粉”换算成经营问题</h2>
+      <div class="formula" aria-label="增长公式">
+        <span>新增关注</span><b>=</b><span>有效非粉阅读</span><b>×</b><span>关注转化率</span>
+      </div>
+      <p class="lead">单靠给已有粉丝写文章不会自然长到一万。核心任务是持续获得精准的非粉阅读，再让内容与主页承诺完成关注转化。</p>
+      <div class="calculator">
+        <h3>目标倒推计算器</h3>
+        <p style="color:rgba(255,255,255,.68)">输入真实数据，即可看到每周和每篇文章需要完成的最低增长量。关注转化率建议先用后台真实值；没有时可用 2.5% 做情景演算，不代表平台基准。</p>
+        <div class="inputs">
+          <label>当前粉丝<input id="current" type="number" min="0" value="0" /></label>
+          <label>计划周数<input id="weeks" type="number" min="1" value="40" /></label>
+          <label>每周文章数<input id="posts" type="number" min="1" step="1" value="2" /></label>
+          <label>关注转化率（%）<input id="conversion" type="number" min="0.1" step="0.1" value="2.5" /></label>
+        </div>
+        <div class="outputs">
+          <div class="metric"><b id="weekly">250</b><small>每周净增关注</small></div>
+          <div class="metric"><b id="perPost">125</b><small>每篇净增关注</small></div>
+          <div class="metric"><b id="reads">5,000</b><small>每篇所需精准非粉阅读</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content">
+      <h2>内容系统：四根支柱，而不是追热点</h2>
+      <table>
+        <thead><tr><th>占比</th><th>栏目</th><th>读者获得什么</th><th>推荐形态</th></tr></thead>
+        <tbody>
+          <tr><td><strong>50%</strong></td><td>《AI 真干活》</td><td>一个真实任务从需求、执行到验证的完整复盘</td><td>前后对比、代码、成本、失败记录</td></tr>
+          <tr><td><strong>25%</strong></td><td>《开发者省时实验》</td><td>可立即照做的工作流、Skill、自动化与模板</td><td>步骤清单、模板、仓库或关键词回复</td></tr>
+          <tr><td><strong>15%</strong></td><td>《工具不吹不黑》</td><td>在相同任务下比较工具，告诉读者谁适合、谁不适合</td><td>统一测试题、评分表、真实账单</td></tr>
+          <tr><td><strong>10%</strong></td><td>《说点判断》</td><td>对 Agent、AI 编程及 AI × Web3 的原创判断</td><td>有证据的观点，不做新闻摘要</td></tr>
+        </tbody>
+      </table>
+
+      <div class="grid two" style="margin-top:18px">
+        <article class="card">
+          <span class="label">每周节奏</span>
+          <h3>一篇旗舰 + 一篇实用</h3>
+          <ul>
+            <li><strong>周二：</strong>1,500–2,500 字旗舰实战，建立专业度。</li>
+            <li><strong>周五：</strong>800–1,500 字工具、模板或踩坑清单，促收藏与转发。</li>
+            <li><strong>周末：</strong>复盘数据，决定下周继续、改写还是停掉某个系列。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="label">每篇硬标准</span>
+          <h3>至少有一个“不能抄”的东西</h3>
+          <ul>
+            <li>你的真实项目截图或终端结果。</li>
+            <li>明确的耗时、成本或成功率对比。</li>
+            <li>踩坑过程与不适用边界。</li>
+            <li>可复用的代码、清单、Skill 或模板。</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 style="margin-top:28px">首批 12 个选题</h3>
+      <div class="grid two">
+        <article class="card"><strong>01</strong> 我把一个真实需求交给 Codex：从接单到测试，它到底省了多少时间</article>
+        <article class="card"><strong>02</strong> 我用 7 天重做了自己的 AI 开发工作台，最后只留下这 5 个环节</article>
+        <article class="card"><strong>03</strong> 把公众号写作变成一个 Skill：我的选题、写作、配图和发布流程</article>
+        <article class="card"><strong>04</strong> Agent 最容易翻车的 7 个环节，我在真实项目里全踩过</article>
+        <article class="card"><strong>05</strong> 同一个前端需求，我让 3 个 AI 编程工具各做一遍</article>
+        <article class="card"><strong>06</strong> 别再问哪个模型最好：先看你的任务属于哪一类</article>
+        <article class="card"><strong>07</strong> 为什么 AI 写出的代码总像对的？我用 4 层验证把坑找出来</article>
+        <article class="card"><strong>08</strong> 从一句需求到可上线页面：一套能复用的 Agent Loop</article>
+        <article class="card"><strong>09</strong> AI 编程的真实账单：时间省了多少，返工又花了多少</article>
+        <article class="card"><strong>10</strong> 我不再收藏 Prompt 之后，真正沉淀下来的 10 个工作流</article>
+        <article class="card"><strong>11</strong> 给独立开发者的 AI 工具栈：每月 300 元以内怎么选</article>
+        <article class="card"><strong>12</strong> AI × Web3 到底有多少真需求？我只看这 3 个可落地场景</article>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <h2>四阶段增长路线</h2>
+      <div class="phase">
+        <h3>阶段 1｜定位验证：0–1,000 粉</h3>
+        <p><strong>目标：</strong>让读者能用一句话复述你是谁，并找到 2 个明显跑赢其他内容的系列。</p>
+        <p><strong>动作：</strong>连续发布 16 篇；只测 4 个栏目；每篇都做真实证据；建立 30 位种子读者反馈群或一对一名单。</p>
+        <p><strong>过关标准：</strong>至少出现 3 篇在关注转化、收藏或分享任一指标上达到近 10 篇中位数的 1.5 倍。</p>
+      </div>
+      <div class="phase">
+        <h3>阶段 2｜系列复制：1,000–3,000 粉</h3>
+        <p><strong>目标：</strong>把偶发爆文变成读者可预期的栏目。</p>
+        <p><strong>动作：</strong>保留前两名系列；每月做 2 次同赛道联合内容、播客或直播；制作第一个常青资产，如《Agent 项目验证清单》。</p>
+        <p><strong>过关标准：</strong>新增关注不再由单篇文章独占；至少两个渠道能持续带来非粉阅读。</p>
+      </div>
+      <div class="phase">
+        <h3>阶段 3｜分发放大：3,000–6,000 粉</h3>
+        <p><strong>目标：</strong>让一份深度内容产生多次触达。</p>
+        <p><strong>动作：</strong>每篇旗舰文拆成 1 条视频号、3 张朋友圈卡片、1 个短帖和 1 次社群讨论；与开源项目、开发者社区和技术活动共创。</p>
+        <p><strong>过关标准：</strong>外部与推荐来源合计成为新增阅读主力，搜一搜持续带来长尾。</p>
+      </div>
+      <div class="phase">
+        <h3>阶段 4｜品牌飞轮：6,000–10,000 粉</h3>
+        <p><strong>目标：</strong>从“作者找选题”切换到“读者和项目给你送选题”。</p>
+        <p><strong>动作：</strong>季度公开实验、读者案例征集、系列合集、线下或线上分享；把高表现文章更新为 2.0，而不是只追新话题。</p>
+        <p><strong>过关标准：</strong>稳定的常读读者、投稿案例与自然合作共同支撑增长，不依赖一次爆文。</p>
+      </div>
+    </section>
+
+    <section id="days90">
+      <h2>第一个 90 天怎么打</h2>
+      <table>
+        <thead><tr><th>周期</th><th>关键任务</th><th>交付物</th><th>验收方式</th></tr></thead>
+        <tbody>
+          <tr><td>第 1–2 周</td><td>改简介、统一封面、整理后台基线；发布 2 篇真实项目文</td><td>账号新首页 + 数据表 + 2 篇文章</td><td>访谈 10 位目标读者：能否复述账号价值</td></tr>
+          <tr><td>第 3–4 周</td><td>四类栏目各测 2 篇；给每篇设计独立关注理由</td><td>累计 8 篇测试样本</td><td>找出关注转化与收藏表现前两名</td></tr>
+          <tr><td>第 5–8 周</td><td>前两名栏目各做 4 篇；上线一个免分享、可直接获取的实用模板</td><td>8 篇系列文 + 1 个常青资产</td><td>系列是否出现连续高于中位数的表现</td></tr>
+          <tr><td>第 9–12 周</td><td>做 2 次同赛道共创；把最佳文章拆成视频号和朋友圈素材</td><td>8 篇文章 + 2 次共创 + 8 条短内容</td><td>非粉阅读来源是否开始多元化</td></tr>
+        </tbody>
+      </table>
+
+      <div class="card" style="margin-top:18px">
+        <h3>一篇文章的标准分发动作</h3>
+        <ol>
+          <li>公众号发布原创长文，标题只承诺一个明确结果。</li>
+          <li>朋友圈写两版：一版讲问题，一版讲实验结果；不要只贴链接。</li>
+          <li>发到 2–3 个高度相关的技术群，先给结论，再说明适合谁看。</li>
+          <li>24 小时内剪成 30–60 秒视频号，讲一个最反常识的发现。</li>
+          <li>72 小时后根据评论补充 FAQ，并记录读者原话作为下一篇选题。</li>
+          <li>表现进入前 25% 的文章，在 30 天内做续集或 2.0 版本。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="metrics">
+      <h2>只盯 6 个指标</h2>
+      <p class="lead">不要迷信网上流传的固定算法权重。公众号是闭源分发系统，先以自己的近 10 篇中位数作为基线。</p>
+      <div class="grid three">
+        <article class="card"><span class="label">增长</span><h3>每周净增关注</h3><p>是否跟上倒推目标，以及新增来源是否可解释。</p></article>
+        <article class="card"><span class="label">获客</span><h3>非粉阅读占比</h3><p>判断内容有没有走出既有订阅圈。</p></article>
+        <article class="card"><span class="label">转化</span><h3>每千非粉阅读关注数</h3><p>用来判断内容承诺与账号定位是否匹配。</p></article>
+        <article class="card"><span class="label">打开</span><h3>送达阅读率</h3><p>检验标题、封面和常读关系，不单独决定内容质量。</p></article>
+        <article class="card"><span class="label">价值</span><h3>收藏 + 分享</h3><p>比点赞更接近“值得留下”和“值得送给朋友”。</p></article>
+        <article class="card"><span class="label">留存</span><h3>常读与重复阅读</h3><p>判断增长是不是一次性流量，而非真实读者资产。</p></article>
+      </div>
+      <p class="quote">复盘规则：高于近 10 篇中位数 1.5 倍的主题，30 天内做续集；连续两篇低于 0.7 倍的栏目，暂停而不是硬更。</p>
+    </section>
+
+    <section id="actions">
+      <h2>未来 14 天，先完成这些</h2>
+      <div class="grid two">
+        <div class="card">
+          <ul class="checklist">
+            <li>记录当前粉丝数及最近 30 天后台数据，填入计算器。</li>
+            <li>把账号简介改成“全栈开发者的 AI 实战笔记”。</li>
+            <li>统一封面模板，强化「说点AI」的可识别主视觉。</li>
+            <li>建立选题表：读者问题、实验设计、证据、结论、分发渠道。</li>
+            <li>发布第一篇《AI 真干活》真实项目复盘。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <ul class="checklist">
+            <li>把《Loop Engineering》设为理念基石文，并增加真实案例入口。</li>
+            <li>把《Skills》改造成可下载模板或实操续集。</li>
+            <li>找 10 位目标读者做 15 分钟访谈，不问喜不喜欢，只问会不会关注与为什么。</li>
+            <li>确定固定更新日：建议周二旗舰、周五实用。</li>
+            <li>建立周复盘：标题、来源、收藏、分享、关注转化、下一步。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>边界与合规</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>可以做</h3>
+          <ul>
+            <li>自然邀请读者关注、收藏、讨论或期待下一篇。</li>
+            <li>通过关键词回复直接提供清单、模板或代码。</li>
+            <li>引用资料后加入原创实验、判断与验证。</li>
+            <li>AI 辅助后进行人工核查，并保留真实来源与过程。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>不要做</h3>
+          <ul>
+            <li>“转发 / 点在看 / 集赞后领资料”等利益诱导。</li>
+            <li>批量洗稿、虚构测试结果或把新闻拼接成所谓趋势。</li>
+            <li>删除、篡改或隐匿生成合成内容标识。</li>
+            <li>为了日更牺牲真实性；对这个定位，证据密度比频次更重要。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>参考与口径</h2>
+      <div class="card">
+        <ol>
+          <li><a href="https://developers.weixin.qq.com/community/develop/doc/0000a4c99dccb8f21d816ffe661009">微信开放社区：公众号文章推荐功能官方答疑</a></li>
+          <li><a href="https://developers.weixin.qq.com/community/develop/article/doc/00080ea36a43e83f42241d81466813">微信开放社区：微信公众号和服务号推荐运营规范</a></li>
+          <li><a href="https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm">中国网信网：《人工智能生成合成内容标识办法》答记者问</a></li>
+          <li><a href="https://www.nrta.gov.cn/art/2025/3/14/art_113_70340.html?xxgkhide=1">国家广播电视总局：《人工智能生成合成内容标识办法》全文</a></li>
+          <li><a href="https://partyfly.github.io/wechat-handbook/zh/">微信公众号操作手册：从官方文档反推的流量策略</a>（非官方整理，仅采信有明确来源的方向，不采信网传权重数字）</li>
+        </ol>
+        <p class="muted">说明：微信不会公开完整推荐算法。本文的比例、阶段和复盘阈值是「说点AI」的经营目标，不是微信官方权重。平台规则会变化，发布前以公众号后台的最新提示和运营规范为准。</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>版本：v1.0 · 2026-07-20 · 为「说点AI」定制</p>
+      <p>下一次校准所需数据：当前粉丝数、最近 30 天发布篇数、单篇阅读中位数、非粉阅读占比、关注来源、表现最好与最差的各 3 篇文章。</p>
+    </footer>
+  </main>
+
+  <script>
+    const fields = ["current", "weeks", "posts", "conversion"];
+    const format = value => Math.ceil(value).toLocaleString("zh-CN");
+
+    function calculate() {
+      const current = Math.max(0, Number(document.getElementById("current").value) || 0);
+      const weeks = Math.max(1, Number(document.getElementById("weeks").value) || 1);
+      const posts = Math.max(1, Number(document.getElementById("posts").value) || 1);
+      const conversion = Math.max(0.001, (Number(document.getElementById("conversion").value) || 0.1) / 100);
+      const remaining = Math.max(0, 10000 - current);
+      const weekly = remaining / weeks;
+      const perPost = weekly / posts;
+      const reads = perPost / conversion;
+
+      document.getElementById("weekly").textContent = format(weekly);
+      document.getElementById("perPost").textContent = format(perPost);
+      document.getElementById("reads").textContent = format(reads);
+    }
+
+    fields.forEach(id => document.getElementById(id).addEventListener("input", calculate));
+    calculate();
+  </script>
+</body>
+</html>

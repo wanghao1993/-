@@ -1,0 +1,4 @@
+interface:
+  display_name: "开发者公众号增长写作"
+  short_description: "用强选题、实战证据和技术解释打造高传播开发者公众号文章"
+  default_prompt: "Use $write-developer-growth-wechat to turn this developer topic into a publish-ready WeChat article."
